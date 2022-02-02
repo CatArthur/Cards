@@ -33,7 +33,8 @@ function DogCard(props) {
           <p><b>Temperament:</b> {props.dog.temperament}</p>
           <FavoriteIcon className='FavouriteIcon' fontSize="large" 
             color={props.isLiked?'primary':'action' } onClick={props.setLike}/>
-          <DeleteForeverIcon className='DeleteIcon' fontSize="large" onClick={props.deleteCard}/>
+          <DeleteForeverIcon className='DeleteIcon' fontSize="large" 
+            color='action' onClick={props.deleteCard} />
         </CardContent>
       </Card>
     );

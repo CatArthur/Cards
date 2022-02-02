@@ -5,7 +5,7 @@ import Switch from '@mui/material/Switch';
 import CachedIcon from '@mui/icons-material/Cached';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
-const AppWidth=345;
+const AppWidth='400px';
 
 function App() {
   const [data, setData]=useState([])
@@ -24,6 +24,10 @@ function App() {
     setDeleted(JSON.parse(localStorage.getItem('deleted') || '[]'))
     setLiked(JSON.parse(localStorage.getItem('liked') || '[]'))
   }, [])
+
+  useEffect(()=>{
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data])
 
   useEffect(()=>{
     localStorage.setItem("liked", JSON.stringify(liked));
@@ -73,7 +77,7 @@ function App() {
       }
       {(deleted.length==data.length)&&
         <p className='Message'>
-          You have dleted all cards already. Use <CachedIcon fontSize='small' color='disable'/> to refresh data.
+          You have deleted all cards already. Use <CachedIcon fontSize='small' color='disable'/> to refresh data.
         </p>
       }
       </div>
