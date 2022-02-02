@@ -4,16 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 function DogCard(props) {
   
     return (
-      <Card sx={{ maxWidth: 345 }} className='Card'>
-        <div onClick={props.setLike}>
-          <FavoriteIcon className='FavouriteIcon' fontSize="large" 
-            color={props.isLiked?'primary':'action' } />
-        </div>
+      <Card sx={{ maxWidth: props.width }} className='Card'>
+        
         <CardMedia
           component="img"
           alt={props.dog.name}
@@ -34,6 +31,9 @@ function DogCard(props) {
             <p><b>Breed is for:</b> {props.dog.bred_for}</p>
           }
           <p><b>Temperament:</b> {props.dog.temperament}</p>
+          <FavoriteIcon className='FavouriteIcon' fontSize="large" 
+            color={props.isLiked?'primary':'action' } onClick={props.setLike}/>
+          <DeleteForeverIcon className='DeleteIcon' fontSize="large" onClick={props.deleteCard}/>
         </CardContent>
       </Card>
     );

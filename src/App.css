@@ -1,4 +1,12 @@
-.Switch{
-    color:darkgray;
-    
+.Switch,.Refresh,.Message{
+    color:darkgray; 
+}
+.Refresh{
+    float:right
+}
+.Refresh:hover{
+    color:cornflowerblue; 
+}
+.Message{
+    margin-left:8px;
 }

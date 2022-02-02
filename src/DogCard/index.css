@@ -1,20 +1,12 @@
-:root {
-    --image-height: 300px;
-    --icon-offset: 0.2em;
-}
-
 .Card{
-    position: relative;
     margin: 8px 8px 8px;
 }
 
-.FavouriteIcon{
-    position: absolute;
-    right: var(--icon-offset, 0.2em);
-    bottom:  var(--icon-offset, 0.2em);
+.DeleteIcon{
+    float:right;
 }
 
 .Image{
-    height: var(--image-height, 200px);
+    height: 300px;
     object-position: 50% 0;
 }
